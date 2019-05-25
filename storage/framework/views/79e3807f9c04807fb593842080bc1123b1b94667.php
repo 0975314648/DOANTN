@@ -1,7 +1,4 @@
-
-@extends('layout_sinhvien.index')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <!-- ******CONTENT****** --> 
 <div class="content container">
@@ -32,9 +29,9 @@
                                                     <td style="padding:0px 20px 0px 30px"><label><strong>Xem các môn học khác</strong></label>
                                                         <select id ="cbmonhoc" name="cbmonhoc" class="form-control"  style="border-radius:3px">
                                                             
-                                                                @foreach($mon as $d)
-                                                                <option  value="{{$d->tenmonhoc}}">{{$d->tenmonhoc}}</option>
-                                                                @endforeach
+                                                                <?php $__currentLoopData = $mon; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                <option  value="<?php echo e($d->tenmonhoc); ?>"><?php echo e($d->tenmonhoc); ?></option>
+                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                         </select>
                                                     </td>
                                                     <td style="padding:20px 20px 0px 0px">
@@ -80,13 +77,13 @@
                                                     <th>Điểm cộng</th>
                                                     <th>Ghi chú</th>
                                                 </tr>
-                                                @foreach($diemdanh as $dd)
+                                                <?php $__currentLoopData = $diemdanh; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dd): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <tr>
                                                 	<td>1</td>
-                                                    <td>{{$dd->ma_sv}}</td>
-                                                    <td>{{$dd->hoten}}</td>
-                                                    <td>{{$dd->ngaysinh}}</td>
-                                                    <td>{{$dd->diemdanh}}</td>
+                                                    <td><?php echo e($dd->ma_sv); ?></td>
+                                                    <td><?php echo e($dd->hoten); ?></td>
+                                                    <td><?php echo e($dd->ngaysinh); ?></td>
+                                                    <td><?php echo e($dd->diemdanh); ?></td>
                                                     <td>P</td>
                                                     <td>P</td>
                                                     <td>P</td>
@@ -105,7 +102,7 @@
                                                     <td>8</td>
                                                     <td>Đạt</td>
                                                 </tr>
-                                                @endforeach
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </thead>
                                             	<!--<tr>
                                             	<td colspan="19" class="text-right"><input type="submit" value="Cập nhật"></td>
@@ -145,4 +142,5 @@
     });
 </script>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout_sinhvien.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp\www\DOANTN\resources\views/sinhvien/diemdanh.blade.php ENDPATH**/ ?>

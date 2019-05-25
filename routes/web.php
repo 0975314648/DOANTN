@@ -51,6 +51,8 @@ Route::group(['prefix'=>'giangvien'],function(){
 Route::get('test','Giangvien\defaultController@getTest');
 });
 
+Route::get('sinhvien/diemdanh','Sinhvien\SinhvienController@diemdanh');
 
+Route::get('sinhvien/tkb','Sinhvien\SinhvienController@thoikhoabieu');
 
 
