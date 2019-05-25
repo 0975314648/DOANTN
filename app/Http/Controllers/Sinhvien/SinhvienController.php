@@ -26,5 +26,10 @@ class SinhvienController extends Controller
     {
         return view('sinhvien.tkb');
     }
+
+    function lichthi()
+    {
+        return view('sinhvien.lichthi');
+    }
 }
 

@@ -55,4 +55,5 @@ Route::get('sinhvien/diemdanh','Sinhvien\SinhvienController@diemdanh');
 
 Route::get('sinhvien/tkb','Sinhvien\SinhvienController@thoikhoabieu');
 
+Route::get('sinhvien/lichthi','Sinhvien\SinhvienController@lichthi');
 

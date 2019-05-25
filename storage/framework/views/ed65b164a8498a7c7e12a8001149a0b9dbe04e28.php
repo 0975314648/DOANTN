@@ -3,7 +3,7 @@
     <base href="<?php echo e(asset('public/')); ?>"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="google-site-verification" content="UGeWtdGxgXZgoQ4CAml_o4y0yLa6yMtL-AKiQ8GTeo0">
-    <title> Kết quả học tập | LTMT2K8 </title>
+    <title> Kết quả học tập | <?php echo e(Auth::user()->username); ?> </title>
     <!-- Meta -->
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
