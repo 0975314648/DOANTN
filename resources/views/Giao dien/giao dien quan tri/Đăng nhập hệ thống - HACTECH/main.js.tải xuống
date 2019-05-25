@@ -1,0 +1,124 @@
+var map;
+jQuery(document).ready(function() {
+
+    /* ======= Flexslider ======= */
+    $('.flexslider').flexslider({
+        animation: "fade"
+    });
+
+    /* ======= jQuery Placeholder ======= */
+    $('input, textarea').placeholder();
+    
+    
+    /* ======= Carousels ======= */
+    $('#news-carousel').carousel({interval: false});
+    $('#videos-carousel').carousel({interval: false});
+    $('#testimonials-carousel').carousel({interval: 6000, pause: "hover"});
+    $('#awards-carousel').carousel({interval: false});
+    
+    
+    /* ======= Flickr PhotoStream ======= */
+    $('#flickr-photos').jflickrfeed({
+        limit: 12,
+        qstrings: {
+        id: '32104790@N02' /* Use idGettr.com to find the flickr user id */
+        },
+        itemTemplate:
+            '<li>' +
+            '<a rel="prettyPhoto[flickr]" href="{{image}}" title="{{title}}">' +
+            	'<img src="{{image_s}}" alt="{{title}}" />' +
+            '</a>' +
+            '</li>'
+			
+    }, function(data) {
+    	$('#flickr-photos a').prettyPhoto();
+    });
+    
+    /* ======= Pretty Photo ======= */
+    // http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/ 
+    $('a.prettyphoto').prettyPhoto();
+    
+    /* ======= Twitter Bootstrap hover dropdown ======= */
+    
+    // apply dropdownHover to all elements with the data-hover="dropdown" attribute
+    $('[data-hover="dropdown"]').dropdownHover();
+    
+    
+    /* ======= Style Switcher ======= */
+    
+    $('#config-trigger').on('click', function(e) {
+        var $panel = $('#config-panel');
+        var panelVisible = $('#config-panel').is(':visible');
+        if (panelVisible) {
+            $panel.hide();
+        } else {
+            $panel.show();
+        }
+        e.preventDefault();
+    });
+    
+    $('#config-close').on('click', function(e) {
+        e.preventDefault();
+        $('#config-panel').hide();
+    });
+    
+    
+    $('#color-options a').on('click', function(e) {
+        var $styleSheet = $(this).attr('data-style');
+        var $logoImage = $(this).attr('data-logo');
+		$('#theme-style').attr('href', $styleSheet);
+		$('#logo').attr('src', $logoImage);		
+				
+		var $listItem = $(this).closest('li');
+		$listItem.addClass('active');
+		$listItem.siblings().removeClass('active');
+		
+		e.preventDefault();
+		
+	});
+
+    var $pathname =  $(location).attr('pathname');
+
+    if($pathname != '/')
+    {
+        $('body').removeClass('home-page');
+    }
+
+    /* ======= Active li main.nav ======= */
+
+    $obj = $('.main-nav').find('a[href="'+ $pathname +'"]');
+
+    $obj.parent().addClass('active');
+
+    tinymce.init({
+        selector: "textarea.editor",
+        language : 'vi_VN',
+        plugins : 'advlist autolink link image lists charmap print preview fullscreen',
+    });
+
+    $('.datetimepicker').datetimepicker(
+    {
+        format:'Y-m-d H:i'
+    });
+
+    $('.datepicker').datetimepicker(
+    {
+        format:'Y-m-d',
+        timepicker:false,
+        lang:'vi',
+        closeOnDateSelect:true,
+        dayOfWeekStart:1,
+        scrollInput:false
+    });
+
+    $('.select2').select2();
+
+    var success = $('table#timekeeping td.success').length,
+        special = $('table#timekeeping td.info').length,
+        danger = $('table#timekeeping td.danger').length,
+        warning = $('table#timekeeping td.warning').length;
+
+    $('table#statistic tbody tr:nth-child(1) td:last-child').html(success+danger+warning+special);
+    $('table#statistic tbody tr:nth-child(2) td:last-child').html(danger);
+    $('table#statistic tbody tr:nth-child(3) td:last-child').html(warning);
+});
