@@ -23,4 +23,22 @@ class ChiTietTKB extends Model
                            ->get();
         return $mon;
     }
+
+    public static function thoikhoabieu()
+    {
+        $thoikhoabieu = DB::table('chitietthoikhoabieu')
+                            ->join('monhoc', 'chitietthoikhoabieu.ma_mon', '=', 'monhoc.ma_mon')
+                            ->join('giangvien', 'chitietthoikhoabieu.ma_gv', '=', 'giangvien.ma_gv')
+                            ->join('phonghoc', 'chitietthoikhoabieu.ma_phong', '=', 'phonghoc.ma_phong')
+                            ->join('thoikhoabieu','chitietthoikhoabieu.ma_tkb','=','thoikhoabieu.ma_tkb')
+                            ->join('thoigianhoc','thoikhoabieu.ma_loai_hoc','=','thoigianhoc.ma_loai_hoc')
+                            ->join('ngaytrongtuan','chitietthoikhoabieu.ma_thu','=','ngaytrongtuan.ma_thu')
+                            ->join('lop','chitietthoikhoabieu.ma_lop','=','lop.ma_lop')
+                            ->select('thoigianhoc.ma_loai_hoc','monhoc.tenmonhoc','giangvien.hoten','phonghoc.tenphong','ngaytrongtuan.thu','thoigianhoc.tuanbatdau','chitietthoikhoabieu.tietbatdau','chitietthoikhoabieu.tietketthuc')
+                            // ->where('lop.ma_lop',Auth::user()->username)
+                            // ->where('thoigianhoc.ma_loai_hoc','=','LT')
+                            ->get();
+                            dd($thoikhoabieu);
+        return $thoikhoabieu;
+    }
 }

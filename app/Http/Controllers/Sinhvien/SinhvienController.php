@@ -22,9 +22,11 @@ class SinhvienController extends Controller
         return view('sinhvien.diemdanh',compact('mon','diemdanh'));
     }
 
-    function thoikhoabieu()
+    public function thoikhoabieu()
     {
-        return view('sinhvien.tkb');
+        $thoikhoabieu = ChiTietTKB::thoikhoabieu();
+
+        return view('sinhvien.tkb',compact('thoikhoabieu'));
     }
 
     function lichthi()

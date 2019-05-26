@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 25, 2019 at 04:00 PM
+-- Generation Time: May 26, 2019 at 03:27 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -96,15 +96,18 @@ CREATE TABLE IF NOT EXISTS `chitietthoikhoabieu` (
   `tietbatdau` int(11) NOT NULL,
   `tietketthuc` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `chitietthoikhoabieu`
 --
 
 INSERT INTO `chitietthoikhoabieu` (`id`, `ma_tkb`, `ma_mon`, `ma_gv`, `ma_lop`, `ma_phong`, `ma_thu`, `tietbatdau`, `tietketthuc`) VALUES
-(1, 'TKB001', 'MON001', 'GV001', 'LTMT2', 'D403', 'T2', 1, 3),
-(2, 'TKB001', 'MON002', 'GV002', 'LTMT2', 'D403', 'T3', 7, 12);
+(4, 'TKB001', 'MON001', 'GV001', 'LTMT2', 'D403', 'T2', 1, 3),
+(2, 'TKB001', 'MON001', 'GV001', 'LTMT2', 'D403', 'T3', 4, 6),
+(3, 'TKB001', 'MON002', 'GV002', 'LTMT2', 'D403', 'T2', 4, 6),
+(5, 'TKB002', 'MON001', 'GV001', 'LTMT2', 'A15-203', 'T2', 7, 12),
+(1, 'TKB002', 'MON002', 'GV002', 'LTMT2', 'A17-405', 'T3', 7, 10);
 
 -- --------------------------------------------------------
 
@@ -290,14 +293,15 @@ CREATE TABLE IF NOT EXISTS `monhoc` (
   `so_buoi_th` int(11) DEFAULT NULL,
   `ghichu` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `monhoc`
 --
 
 INSERT INTO `monhoc` (`id`, `ma_mon`, `ma_khoa`, `tenmonhoc`, `ma_gd`, `so_tc`, `so_buoi_lt`, `so_buoi_th`, `ghichu`) VALUES
-(1, 'MON001', 'CNTT', 'Cơ sở dữ liệu', 'GD001', 5, 5, 2, NULL);
+(1, 'MON001', 'CNTT', 'Cơ sở dữ liệu', 'GD001', 5, 2, 2, NULL),
+(2, 'MON002', 'CNTT', 'HTML', 'GD001', 4, 3, 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -335,14 +339,16 @@ CREATE TABLE IF NOT EXISTS `phonghoc` (
   `tenphong` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `nhahoc` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `phonghoc`
 --
 
 INSERT INTO `phonghoc` (`id`, `ma_phong`, `tenphong`, `nhahoc`) VALUES
-(1, 'D403', 'Phòng 403', 'Nhà D');
+(1, 'D403', 'Phòng 403', 'Nhà D'),
+(2, 'A15-203', 'Phòng 203', 'A15'),
+(3, 'A17-405', 'Phòng 405', 'A17');
 
 -- --------------------------------------------------------
 
@@ -377,6 +383,33 @@ INSERT INTO `sinhvien` (`id`, `ma_sv`, `hoten`, `gioitinh`, `ngaysinh`, `diachi`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `thoigianhoc`
+--
+
+DROP TABLE IF EXISTS `thoigianhoc`;
+CREATE TABLE IF NOT EXISTS `thoigianhoc` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ma_mon` varchar(255) COLLATE utf16_vietnamese_ci NOT NULL,
+  `ma_loai_hoc` varchar(255) COLLATE utf16_vietnamese_ci NOT NULL,
+  `tuanbatdau` varchar(255) COLLATE utf16_vietnamese_ci NOT NULL,
+  `tuanketthuc` varchar(255) COLLATE utf16_vietnamese_ci NOT NULL,
+  `ghichu` varchar(255) COLLATE utf16_vietnamese_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf16 COLLATE=utf16_vietnamese_ci;
+
+--
+-- Dumping data for table `thoigianhoc`
+--
+
+INSERT INTO `thoigianhoc` (`id`, `ma_mon`, `ma_loai_hoc`, `tuanbatdau`, `tuanketthuc`, `ghichu`) VALUES
+(1, 'MON001', 'LT', '1', '3', NULL),
+(2, 'MON002', 'LT', '2', '4', NULL),
+(3, 'MON001', 'TH', '1', '2', NULL),
+(4, 'MON002', 'TH', '2', '3', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `thoikhoabieu`
 --
 
@@ -388,19 +421,16 @@ CREATE TABLE IF NOT EXISTS `thoikhoabieu` (
   `ma_khoa` varchar(255) NOT NULL,
   `ma_kyhoc` varchar(255) NOT NULL,
   `ma_loai_hoc` varchar(255) NOT NULL,
-  `tuanbatdau` int(11) NOT NULL,
-  `tuanketthuc` int(11) NOT NULL,
-  `thoigianhoc` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `thoikhoabieu`
 --
 
-INSERT INTO `thoikhoabieu` (`id`, `ma_tkb`, `ma_khoahoc`, `ma_khoa`, `ma_kyhoc`, `ma_loai_hoc`, `tuanbatdau`, `tuanketthuc`, `thoigianhoc`) VALUES
-(1, 'TKB001', 'K8', 'CNTT', '1', 'LT', 1, 15, '100'),
-(2, 'TKB001', 'K8', 'CNTT', '1', 'TH', 2, 10, '100');
+INSERT INTO `thoikhoabieu` (`id`, `ma_tkb`, `ma_khoahoc`, `ma_khoa`, `ma_kyhoc`, `ma_loai_hoc`) VALUES
+(1, 'TKB001', 'K8', 'CNTT', '1', 'LT'),
+(2, 'TKB002', 'K8', 'CNTT', '1', 'TH');
 
 -- --------------------------------------------------------
 
@@ -434,6 +464,31 @@ INSERT INTO `tiethoc` (`id`, `tiet`, `thoigian_batdau`, `thoigian_ketthuc`) VALU
 (10, 10, '15:00:00', '15:45:00'),
 (11, 11, '15:50:00', '16:35:00'),
 (12, 12, '16:40:00', '17:25:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tuanhoc`
+--
+
+DROP TABLE IF EXISTS `tuanhoc`;
+CREATE TABLE IF NOT EXISTS `tuanhoc` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tuan` int(11) NOT NULL,
+  `thoigianbatdau` date NOT NULL,
+  `thoigianketthuc` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf16 COLLATE=utf16_vietnamese_ci;
+
+--
+-- Dumping data for table `tuanhoc`
+--
+
+INSERT INTO `tuanhoc` (`id`, `tuan`, `thoigianbatdau`, `thoigianketthuc`) VALUES
+(1, 1, '2019-05-06', '2019-05-12'),
+(2, 2, '2019-05-13', '2019-05-19'),
+(3, 3, '2019-05-20', '2019-05-26'),
+(4, 4, '2019-05-27', '2019-06-02');
 
 -- --------------------------------------------------------
 

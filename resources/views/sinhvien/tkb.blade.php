@@ -74,8 +74,7 @@
                                                 </tr>
                                                 <tr>
                                                 	<th>Sáng</th>
-                                                    <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
-                                                    <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
+                                                    <td colspan="3"></td>
                                                     <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
                                                     <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
                                                     <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
