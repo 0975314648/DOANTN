@@ -42,15 +42,14 @@ Route::get('sinhviendefault', function () {
 
 
 Route::group(['prefix'=>'giangvien'],function(){
-    Route::get('/','Giangvien\defaultController@getDefault');
+    Route::get('/','Giangvien\defaultController@getIndex');
     Route::get('thongke','Giangvien\defaultController@getThongke');
     Route::get('thongke/chitiet','Giangvien\defaultController@getchitietThongke');
     Route::get('diemdanh','Giangvien\defaultController@getDiemdanh');
     Route::get('lichday','Giangvien\defaultController@getLichday');
 
-Route::get('test','Giangvien\defaultController@getTest');
+    Route::get('test','Giangvien\defaultController@getTest');
 });
-
 Route::get('sinhvien/diemdanh','Sinhvien\SinhvienController@diemdanh');
 
 Route::get('sinhvien/tkb','Sinhvien\SinhvienController@thoikhoabieu');

@@ -42,14 +42,16 @@
                                                     <th>Phòng học</th>
                                                     <th>Trạng thái</th>                                               
                                                 </tr>
+                                                @foreach($lichday as $a)
                                                 <tr>
-                                                	<td>6h45-9h20</td>
-                                                    <td>Lý Thuyết</td>
-                                                    <td>CSDL</td>
-                                                    <td>LTMT2K8</td>
-                                                    <td>A17-405</td>
-                                                    <td><a href="Đăng nhập hệ thống - HACTECH.html">Vào lớp</a></td>
+                                                  <td>{{$a->tietbatdau}} - {{$a->tietketthuc}}</td>
+                                                    <td>{{$a->ten_loaihoc}}</td>
+                                                    <td>{{$a->tenmonhoc}}</td>
+                                                    <td>{{$a->ma_lop}} - {{$a->ma_khoahoc}}</td>
+                                                    <td>{{$a->tenphong}} - {{$a->nhahoc}}</td>
+                                                    <td><a href="#">Vào lớp</a></td>
                                                 </tr>
+                                                @endforeach
                                             </thead>
                                         </table><!--//table-->
                                     </div>
@@ -64,6 +66,7 @@
                                     <div class="table-responsive">                      
                                         <table class="table table-boxed table-bordered table-striped text-center">
                                             <thead>
+                                                <?php $size=count($lichday); ?>
                                                  <tr>
                                                     <th>Thời gian</th>
                                                     <th>Loại</th>
@@ -72,14 +75,18 @@
                                                     <th>Phòng học</th>
                                                     <th>Trạng thái</th>                                               
                                                 </tr>
+
+                                                @foreach($lichday as $a)
                                                 <tr>
-                                                	<td>6h45-9h20</td>
-                                                    <td>Lý Thuyết</td>
-                                                    <td>CSDL</td>
-                                                    <td>LTMT3K8</td>
-                                                    <td>A17-401</td>
-                                                    <td><a href="Đăng nhập hệ thống - HACTECH.html">Vào lớp</a></td>
+
+                                                  <td>{{$a->tietbatdau}} - {{$a->tietketthuc}}</td>
+                                                    <td>{{$a->ten_loaihoc}}</td>
+                                                    <td>{{$a->tenmonhoc}}</td>
+                                                    <td>{{$a->ma_lop}} - {{$a->ma_khoahoc}}</td>
+                                                    <td>{{$a->tenphong}} - {{$a->nhahoc}}</td>
+                                                    <td><a href="#">Vào lớp</a></td>
                                                 </tr>
+                                                @endforeach
                                             </thead>
                                         </table><!--//table-->
                                     </div>
