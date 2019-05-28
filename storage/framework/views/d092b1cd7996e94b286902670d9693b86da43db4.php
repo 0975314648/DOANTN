@@ -1,5 +1,12 @@
 <?php $__env->startSection('content'); ?>
-
+<?php 
+    $size2=count($thoikhoabieut2);
+    $size3=count($thoikhoabieut3);
+    $size4=count($thoikhoabieut4);
+    $size5=count($thoikhoabieut5);
+    $size6=count($thoikhoabieut6);
+    $size7=count($thoikhoabieut7);
+?>
 <!-- ******CONTENT****** --> 
 <div class="content container">
             <div class="page-wrapper">
@@ -30,48 +37,118 @@
                                         <table class="table table-boxed table-bordered table-striped text-center">
                                             <thead>
                                                 <tr>
-                                                    <th rowspan="2"></th>
+                                                    <th colspan="37">LÝ THUYẾT</th>
+                                                </tr>
+                                                <tr>
+                                                    <th rowspan="1">-</th>
                                                     <th colspan="6">Thứ 2</th>
                                                     <th colspan="6">Thứ 3</th>
                                                     <th colspan="6">Thứ 4</th>
                                                     <th colspan="6">Thứ 5</th>
                                                     <th colspan="6">Thứ 6</th>
+                                                    <th colspan="6">Thứ 7</th>
                                                 </tr>
                                                 <tr>
-                                                	<td>1</td>
-                                                    <td>2</td>
-                                                    <td>3</td>
-                                                    <td>4</td>
-                                                    <td>5</td>
-                                                    <td>6</td>
-                                                    <td>1</td>
-                                                    <td>2</td>
-                                                    <td>3</td>
-                                                    <td>4</td>
-                                                    <td>5</td>
-                                                    <td>6</td>
-                                                    <td>1</td>
-                                                    <td>2</td>
-                                                    <td>3</td>
-                                                    <td>4</td>
-                                                    <td>5</td>
-                                                    <td>6</td>
-                                                    <td>1</td>
-                                                    <td>2</td>
-                                                    <td>3</td>
-                                                    <td>4</td>
-                                                    <td>5</td>
-                                                    <td>6</td>
-                                                    <td>1</td>
-                                                    <td>2</td>
-                                                    <td>3</td>
-                                                    <td>4</td>
-                                                    <td>5</td>
-                                                    <td>6</td>
+                                                
+                                                
+                                                	<th>Sáng</th>
+                                                    
+                                                    <?php $__currentLoopData = $thoikhoabieut2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <?php if($size2>1){ ?>
+                                                    <td colspan="3"><?php echo e($a->thu); ?><br><?php echo e($a->tenmonhoc); ?><br><?php echo e($a->hoten); ?><br><?php echo e($a->nhahoc); ?>-<?php echo e($a->tenphong); ?><br>Tiết <?php echo e($a->tietbatdau); ?> - <?php echo e($a->tietketthuc); ?></td>
+                                                    <?php } else { ?>
+                                                    <td colspan="6"><?php echo e($a->thu); ?><br><?php echo e($a->tenmonhoc); ?><br><?php echo e($a->hoten); ?><br><?php echo e($a->nhahoc); ?>-<?php echo e($a->tenphong); ?><br>Tiết <?php echo e($a->tietbatdau); ?> - <?php echo e($a->tietketthuc); ?></td>
+                                                    <?php } ?>
+        
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    <?php $__currentLoopData = $thoikhoabieut3; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <?php if($size3>1){ ?>
+                                                    <td colspan="3"><?php echo e($a->tenmonhoc); ?><br><?php echo e($a->hoten); ?><br><?php echo e($a->nhahoc); ?>-<?php echo e($a->tenphong); ?> Tiết <?php echo e($a->tietbatdau); ?> - <?php echo e($a->tietketthuc); ?></td>
+                                                    <?php } else { ?>
+                                                    <td colspan="6"><?php echo e($a->thu); ?><br><?php echo e($a->tenmonhoc); ?><br><?php echo e($a->hoten); ?><br><?php echo e($a->nhahoc); ?>-<?php echo e($a->tenphong); ?><br>Tiết <?php echo e($a->tietbatdau); ?> - <?php echo e($a->tietketthuc); ?></td>
+                                                    <?php } ?>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    
+                                                    <?php $__currentLoopData = $thoikhoabieut4; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <?php if($size4>1){ ?>
+                                                    <td colspan="3"><?php echo e($a->tenmonhoc); ?><br><?php echo e($a->hoten); ?><br><?php echo e($a->nhahoc); ?>-<?php echo e($a->tenphong); ?><br>Tiết <?php echo e($a->tietbatdau); ?> - <?php echo e($a->tietketthuc); ?></td>
+                                                    <?php } else { ?>
+                                                    <td colspan="6"><?php echo e($a->tenmonhoc); ?><br><?php echo e($a->hoten); ?><br><?php echo e($a->nhahoc); ?>-<?php echo e($a->tenphong); ?><br>Tiết <?php echo e($a->tietbatdau); ?> - <?php echo e($a->tietketthuc); ?></td>
+                                                    <?php } ?>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    
+                                                    <?php $__currentLoopData = $thoikhoabieut5; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <?php if($size5>1){ ?>
+                                                    <td colspan="3"><?php echo e($a->tenmonhoc); ?><br><?php echo e($a->hoten); ?><br><?php echo e($a->nhahoc); ?>-<?php echo e($a->tenphong); ?><br>Tiết <?php echo e($a->tietbatdau); ?> - <?php echo e($a->tietketthuc); ?></td>
+                                                    <?php } else { ?>
+                                                    <td colspan="6"><?php echo e($a->tenmonhoc); ?><br><?php echo e($a->hoten); ?><br><?php echo e($a->nhahoc); ?>-<?php echo e($a->tenphong); ?><br>Tiết <?php echo e($a->tietbatdau); ?> - <?php echo e($a->tietketthuc); ?></td>
+                                                    <?php } ?>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    
+                                                    <?php $__currentLoopData = $thoikhoabieut6; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <?php if($size6>1){ ?>
+                                                    <td colspan="3"><?php echo e($a->tenmonhoc); ?><br><?php echo e($a->hoten); ?><br><?php echo e($a->nhahoc); ?>-<?php echo e($a->tenphong); ?><br>Tiết <?php echo e($a->tietbatdau); ?> - <?php echo e($a->tietketthuc); ?></td>
+                                                    <?php } else { ?>
+                                                    <td colspan="6"><?php echo e($a->tenmonhoc); ?><br><?php echo e($a->hoten); ?><br><?php echo e($a->nhahoc); ?>-<?php echo e($a->tenphong); ?><br>Tiết <?php echo e($a->tietbatdau); ?> - <?php echo e($a->tietketthuc); ?></td>
+                                                    <?php } ?>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    
+                                                    <?php $__currentLoopData = $thoikhoabieut7; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <?php if($size7>1){ ?>
+                                                    <td colspan="3"><?php echo e($a->tenmonhoc); ?><br><?php echo e($a->hoten); ?><br><?php echo e($a->nhahoc); ?>-<?php echo e($a->tenphong); ?><br>Tiết <?php echo e($a->tietbatdau); ?> - <?php echo e($a->tietketthuc); ?></td>
+                                                    <?php } else { ?>
+                                                    <td colspan="6"><?php echo e($a->tenmonhoc); ?><br><?php echo e($a->hoten); ?><br><?php echo e($a->nhahoc); ?>-<?php echo e($a->tenphong); ?><br>Tiết <?php echo e($a->tietbatdau); ?> - <?php echo e($a->tietketthuc); ?></td>
+                                                    <?php } ?>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    
+                                                </tr>
+                                                
+                                                <tr>
+                                                	<th>Chiều</th>
+                                                    
+                                                    
+                                                    <?php $__currentLoopData = $thoikhoabieut2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <?php if($size2>1){ ?>
+                                                    <td colspan="3"><?php echo e($a->thu); ?><br><?php echo e($a->tenmonhoc); ?><br><?php echo e($a->hoten); ?><br><?php echo e($a->nhahoc); ?>-<?php echo e($a->tenphong); ?><br>Tiết <?php echo e($a->tietbatdau); ?> - <?php echo e($a->tietketthuc); ?></td>
+                                                    <?php } else { ?>
+                                                    <td colspan="6"><?php echo e($a->thu); ?><br><?php echo e($a->tenmonhoc); ?><br><?php echo e($a->hoten); ?><br><?php echo e($a->nhahoc); ?>-<?php echo e($a->tenphong); ?><br>Tiết <?php echo e($a->tietbatdau); ?> - <?php echo e($a->tietketthuc); ?></td>
+                                                    <?php } ?>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    <td colspan="6">Lập trình web 2<br>Cô Vân TH-201<br>Từ tuần 10-17</td>
+                                                    <td colspan="6">Lập trình web 2<br>Cô Vân TH-201<br>Từ tuần 10-17</td>
+                                                    <td colspan="6">Lập trình web 2<br>Cô Vân TH-201<br>Từ tuần 10-17</td>
+                                                    <td colspan="6">Lập trình web 2<br>Cô Vân TH-201<br>Từ tuần 10-17</td>
+                                                    <td colspan="6">Lập trình web 2<br>Cô Vân TH-201<br>Từ tuần 10-17</td>
+                                                </tr>
+                                                </thead>
+                                            	<!--<tr>
+                                            	<td colspan="19" class="text-right"><input type="submit" value="Cập nhật"></td>
+                                            	</tr>-->
+                                        </table><!--//table-->
+
+
+                                                <!-- TH -->
+                                        <table class="table table-boxed table-bordered table-striped text-center">
+                                            <thead>
+
+                                                <tr>
+                                                    <th colspan="37">THỰC HÀNH</th>
                                                 </tr>
                                                 <tr>
                                                 	<th>Sáng</th>
-                                                    <td colspan="3"></td>
+                                                    
+                                                    <?php $__currentLoopData = $thoikhoabieut3; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <?php if($size3>1){ ?>
+                                                    <td colspan="3"><?php echo e($a->tenmonhoc); ?><br><?php echo e($a->hoten); ?><br><?php echo e($a->nhahoc); ?>-<?php echo e($a->tenphong); ?></td>
+                                                    <?php } else { ?>
+                                                    <td colspan="6"><?php echo e($a->tenmonhoc); ?><br><?php echo e($a->hoten); ?><br><?php echo e($a->nhahoc); ?>-<?php echo e($a->tenphong); ?></td>
+                                                    <?php } ?>
+                                                    
+                                                    
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    
+                                                    <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
+                                                    <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
                                                     <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
                                                     <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
                                                     <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
@@ -81,41 +158,11 @@
                                                     <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
                                                     <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
                                                 </tr>
-                                                <tr>
-                                                	<th></th>
-                                                    <td>7</td>
-                                                    <td>8</td>
-                                                    <td>9</td>
-                                                    <td>10</td>
-                                                    <td>11</td>
-                                                    <td>12</td>
-                                                    <td>7</td>
-                                                    <td>8</td>
-                                                    <td>9</td>
-                                                    <td>10</td>
-                                                    <td>11</td>
-                                                    <td>12</td>
-                                                    <td>7</td>
-                                                    <td>8</td>
-                                                    <td>9</td>
-                                                    <td>10</td>
-                                                    <td>11</td>
-                                                    <td>12</td>
-                                                    <td>7</td>
-                                                    <td>8</td>
-                                                    <td>9</td>
-                                                    <td>10</td>
-                                                    <td>11</td>
-                                                    <td>12</td>
-                                                    <td>7</td>
-                                                    <td>8</td>
-                                                    <td>9</td>
-                                                    <td>10</td>
-                                                    <td>11</td>
-                                                    <td>12</td>
-                                                </tr>
+                                                
                                                 <tr>
                                                 	<th>Chiều</th>
+                                                    <td></td>
+                                                    <td colspan="5">Lập trình web 2<br>Cô Vân TH-201<br>Từ tuần 10-17</td>
                                                     <td></td>
                                                     <td colspan="5">Lập trình web 2<br>Cô Vân TH-201<br>Từ tuần 10-17</td>
                                                     <td></td>
@@ -132,6 +179,9 @@
                                             	<td colspan="19" class="text-right"><input type="submit" value="Cập nhật"></td>
                                             	</tr>-->
                                         </table><!--//table-->
+
+
+                                        
                                     </div>
                                     <hr>
                                         <div class="tw">

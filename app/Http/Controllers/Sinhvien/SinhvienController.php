@@ -24,9 +24,21 @@ class SinhvienController extends Controller
 
     public function thoikhoabieu()
     {
-        $thoikhoabieu = ChiTietTKB::thoikhoabieu();
-
-        return view('sinhvien.tkb',compact('thoikhoabieu'));
+        $thoikhoabieut2 = ChiTietTKB::thoikhoabieu('T2');
+        $thoikhoabieut3 = ChiTietTKB::thoikhoabieu('T3');
+        $thoikhoabieut4 = ChiTietTKB::thoikhoabieu('T4');
+        $thoikhoabieut5 = ChiTietTKB::thoikhoabieu('T5');
+        $thoikhoabieut6 = ChiTietTKB::thoikhoabieu('T6');
+        $thoikhoabieut7 = ChiTietTKB::thoikhoabieu('T7');
+        
+          return view('sinhvien.tkb')
+                      ->with('thoikhoabieut2',$thoikhoabieut2)
+                      ->with('thoikhoabieut3',$thoikhoabieut3)
+                      ->with('thoikhoabieut4',$thoikhoabieut4)
+                      ->with('thoikhoabieut5',$thoikhoabieut5)
+                      ->with('thoikhoabieut6',$thoikhoabieut6)
+                      ->with('thoikhoabieut7',$thoikhoabieut7);
+    
     }
 
     function lichthi()
@@ -34,4 +46,5 @@ class SinhvienController extends Controller
         return view('sinhvien.lichthi');
     }
 }
+
 

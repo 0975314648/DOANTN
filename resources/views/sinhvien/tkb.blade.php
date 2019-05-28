@@ -2,7 +2,14 @@
 @extends('layout_sinhvien.index')
 
 @section('content')
-
+<?php 
+    $size2=count($thoikhoabieut2);
+    $size3=count($thoikhoabieut3);
+    $size4=count($thoikhoabieut4);
+    $size5=count($thoikhoabieut5);
+    $size6=count($thoikhoabieut6);
+    $size7=count($thoikhoabieut7);
+?>
 <!-- ******CONTENT****** --> 
 <div class="content container">
             <div class="page-wrapper">
@@ -33,48 +40,118 @@
                                         <table class="table table-boxed table-bordered table-striped text-center">
                                             <thead>
                                                 <tr>
-                                                    <th rowspan="2"></th>
+                                                    <th colspan="37">LÝ THUYẾT</th>
+                                                </tr>
+                                                <tr>
+                                                    <th rowspan="1">-</th>
                                                     <th colspan="6">Thứ 2</th>
                                                     <th colspan="6">Thứ 3</th>
                                                     <th colspan="6">Thứ 4</th>
                                                     <th colspan="6">Thứ 5</th>
                                                     <th colspan="6">Thứ 6</th>
+                                                    <th colspan="6">Thứ 7</th>
                                                 </tr>
                                                 <tr>
-                                                	<td>1</td>
-                                                    <td>2</td>
-                                                    <td>3</td>
-                                                    <td>4</td>
-                                                    <td>5</td>
-                                                    <td>6</td>
-                                                    <td>1</td>
-                                                    <td>2</td>
-                                                    <td>3</td>
-                                                    <td>4</td>
-                                                    <td>5</td>
-                                                    <td>6</td>
-                                                    <td>1</td>
-                                                    <td>2</td>
-                                                    <td>3</td>
-                                                    <td>4</td>
-                                                    <td>5</td>
-                                                    <td>6</td>
-                                                    <td>1</td>
-                                                    <td>2</td>
-                                                    <td>3</td>
-                                                    <td>4</td>
-                                                    <td>5</td>
-                                                    <td>6</td>
-                                                    <td>1</td>
-                                                    <td>2</td>
-                                                    <td>3</td>
-                                                    <td>4</td>
-                                                    <td>5</td>
-                                                    <td>6</td>
+                                                
+                                                
+                                                	<th>Sáng</th>
+                                                    
+                                                    @foreach($thoikhoabieut2 as $a)
+                                                    <?php if($size2>1){ ?>
+                                                    <td colspan="3">{{$a->thu}}<br>{{$a->tenmonhoc}}<br>{{$a->hoten}}<br>{{$a->nhahoc}}-{{$a->tenphong}}<br>Tiết {{$a->tietbatdau}} - {{$a->tietketthuc}}</td>
+                                                    <?php } else { ?>
+                                                    <td colspan="6">{{$a->thu}}<br>{{$a->tenmonhoc}}<br>{{$a->hoten}}<br>{{$a->nhahoc}}-{{$a->tenphong}}<br>Tiết {{$a->tietbatdau}} - {{$a->tietketthuc}}</td>
+                                                    <?php } ?>
+        
+                                                    @endforeach
+                                                    @foreach($thoikhoabieut3 as $a)
+                                                    <?php if($size3>1){ ?>
+                                                    <td colspan="3">{{$a->tenmonhoc}}<br>{{$a->hoten}}<br>{{$a->nhahoc}}-{{$a->tenphong}} Tiết {{$a->tietbatdau}} - {{$a->tietketthuc}}</td>
+                                                    <?php } else { ?>
+                                                    <td colspan="6">{{$a->thu}}<br>{{$a->tenmonhoc}}<br>{{$a->hoten}}<br>{{$a->nhahoc}}-{{$a->tenphong}}<br>Tiết {{$a->tietbatdau}} - {{$a->tietketthuc}}</td>
+                                                    <?php } ?>
+                                                    @endforeach
+                                                    
+                                                    @foreach($thoikhoabieut4 as $a)
+                                                    <?php if($size4>1){ ?>
+                                                    <td colspan="3">{{$a->tenmonhoc}}<br>{{$a->hoten}}<br>{{$a->nhahoc}}-{{$a->tenphong}}<br>Tiết {{$a->tietbatdau}} - {{$a->tietketthuc}}</td>
+                                                    <?php } else { ?>
+                                                    <td colspan="6">{{$a->tenmonhoc}}<br>{{$a->hoten}}<br>{{$a->nhahoc}}-{{$a->tenphong}}<br>Tiết {{$a->tietbatdau}} - {{$a->tietketthuc}}</td>
+                                                    <?php } ?>
+                                                    @endforeach
+                                                    
+                                                    @foreach($thoikhoabieut5 as $a)
+                                                    <?php if($size5>1){ ?>
+                                                    <td colspan="3">{{$a->tenmonhoc}}<br>{{$a->hoten}}<br>{{$a->nhahoc}}-{{$a->tenphong}}<br>Tiết {{$a->tietbatdau}} - {{$a->tietketthuc}}</td>
+                                                    <?php } else { ?>
+                                                    <td colspan="6">{{$a->tenmonhoc}}<br>{{$a->hoten}}<br>{{$a->nhahoc}}-{{$a->tenphong}}<br>Tiết {{$a->tietbatdau}} - {{$a->tietketthuc}}</td>
+                                                    <?php } ?>
+                                                    @endforeach
+                                                    
+                                                    @foreach($thoikhoabieut6 as $a)
+                                                    <?php if($size6>1){ ?>
+                                                    <td colspan="3">{{$a->tenmonhoc}}<br>{{$a->hoten}}<br>{{$a->nhahoc}}-{{$a->tenphong}}<br>Tiết {{$a->tietbatdau}} - {{$a->tietketthuc}}</td>
+                                                    <?php } else { ?>
+                                                    <td colspan="6">{{$a->tenmonhoc}}<br>{{$a->hoten}}<br>{{$a->nhahoc}}-{{$a->tenphong}}<br>Tiết {{$a->tietbatdau}} - {{$a->tietketthuc}}</td>
+                                                    <?php } ?>
+                                                    @endforeach
+                                                    
+                                                    @foreach($thoikhoabieut7 as $a)
+                                                    <?php if($size7>1){ ?>
+                                                    <td colspan="3">{{$a->tenmonhoc}}<br>{{$a->hoten}}<br>{{$a->nhahoc}}-{{$a->tenphong}}<br>Tiết {{$a->tietbatdau}} - {{$a->tietketthuc}}</td>
+                                                    <?php } else { ?>
+                                                    <td colspan="6">{{$a->tenmonhoc}}<br>{{$a->hoten}}<br>{{$a->nhahoc}}-{{$a->tenphong}}<br>Tiết {{$a->tietbatdau}} - {{$a->tietketthuc}}</td>
+                                                    <?php } ?>
+                                                    @endforeach
+                                                    
+                                                </tr>
+                                                
+                                                <tr>
+                                                	<th>Chiều</th>
+                                                    
+                                                    
+                                                    @foreach($thoikhoabieut2 as $a)
+                                                    <?php if($size2>1){ ?>
+                                                    <td colspan="3">{{$a->thu}}<br>{{$a->tenmonhoc}}<br>{{$a->hoten}}<br>{{$a->nhahoc}}-{{$a->tenphong}}<br>Tiết {{$a->tietbatdau}} - {{$a->tietketthuc}}</td>
+                                                    <?php } else { ?>
+                                                    <td colspan="6">{{$a->thu}}<br>{{$a->tenmonhoc}}<br>{{$a->hoten}}<br>{{$a->nhahoc}}-{{$a->tenphong}}<br>Tiết {{$a->tietbatdau}} - {{$a->tietketthuc}}</td>
+                                                    <?php } ?>
+                                                    @endforeach
+                                                    <td colspan="6">Lập trình web 2<br>Cô Vân TH-201<br>Từ tuần 10-17</td>
+                                                    <td colspan="6">Lập trình web 2<br>Cô Vân TH-201<br>Từ tuần 10-17</td>
+                                                    <td colspan="6">Lập trình web 2<br>Cô Vân TH-201<br>Từ tuần 10-17</td>
+                                                    <td colspan="6">Lập trình web 2<br>Cô Vân TH-201<br>Từ tuần 10-17</td>
+                                                    <td colspan="6">Lập trình web 2<br>Cô Vân TH-201<br>Từ tuần 10-17</td>
+                                                </tr>
+                                                </thead>
+                                            	<!--<tr>
+                                            	<td colspan="19" class="text-right"><input type="submit" value="Cập nhật"></td>
+                                            	</tr>-->
+                                        </table><!--//table-->
+
+
+                                                <!-- TH -->
+                                        <table class="table table-boxed table-bordered table-striped text-center">
+                                            <thead>
+
+                                                <tr>
+                                                    <th colspan="37">THỰC HÀNH</th>
                                                 </tr>
                                                 <tr>
                                                 	<th>Sáng</th>
-                                                    <td colspan="3"></td>
+                                                    
+                                                    @foreach($thoikhoabieut3 as $a)
+                                                    <?php if($size3>1){ ?>
+                                                    <td colspan="3">{{$a->tenmonhoc}}<br>{{$a->hoten}}<br>{{$a->nhahoc}}-{{$a->tenphong}}</td>
+                                                    <?php } else { ?>
+                                                    <td colspan="6">{{$a->tenmonhoc}}<br>{{$a->hoten}}<br>{{$a->nhahoc}}-{{$a->tenphong}}</td>
+                                                    <?php } ?>
+                                                    
+                                                    
+                                                    @endforeach
+                                                    
+                                                    <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
+                                                    <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
                                                     <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
                                                     <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
                                                     <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
@@ -84,41 +161,11 @@
                                                     <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
                                                     <td colspan="3">Cơ sở dữ liệu<br>Cô Hòa A17-405<br>Từ tuần 10-17</td>
                                                 </tr>
-                                                <tr>
-                                                	<th></th>
-                                                    <td>7</td>
-                                                    <td>8</td>
-                                                    <td>9</td>
-                                                    <td>10</td>
-                                                    <td>11</td>
-                                                    <td>12</td>
-                                                    <td>7</td>
-                                                    <td>8</td>
-                                                    <td>9</td>
-                                                    <td>10</td>
-                                                    <td>11</td>
-                                                    <td>12</td>
-                                                    <td>7</td>
-                                                    <td>8</td>
-                                                    <td>9</td>
-                                                    <td>10</td>
-                                                    <td>11</td>
-                                                    <td>12</td>
-                                                    <td>7</td>
-                                                    <td>8</td>
-                                                    <td>9</td>
-                                                    <td>10</td>
-                                                    <td>11</td>
-                                                    <td>12</td>
-                                                    <td>7</td>
-                                                    <td>8</td>
-                                                    <td>9</td>
-                                                    <td>10</td>
-                                                    <td>11</td>
-                                                    <td>12</td>
-                                                </tr>
+                                                
                                                 <tr>
                                                 	<th>Chiều</th>
+                                                    <td></td>
+                                                    <td colspan="5">Lập trình web 2<br>Cô Vân TH-201<br>Từ tuần 10-17</td>
                                                     <td></td>
                                                     <td colspan="5">Lập trình web 2<br>Cô Vân TH-201<br>Từ tuần 10-17</td>
                                                     <td></td>
@@ -135,6 +182,9 @@
                                             	<td colspan="19" class="text-right"><input type="submit" value="Cập nhật"></td>
                                             	</tr>-->
                                         </table><!--//table-->
+
+
+                                        
                                     </div>
                                     <hr>
                                         <div class="tw">
