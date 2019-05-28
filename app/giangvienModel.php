@@ -77,6 +77,7 @@ class giangvienModel extends Model
           ->join('lop', 'chitietthoikhoabieu.ma_lop', '=', 'lop.ma_lop')
           ->join('phonghoc', 'chitietthoikhoabieu.ma_phong', '=', 'phonghoc.ma_phong')
           ->join('loaihoc','thoikhoabieu.ma_loai_hoc','=','loaihoc.ma_loai_hoc')
+          ->join('thoigianhoc','chitietthoikhoabieu.ma_mon','=','thoigianhoc.ma_mon')
           ->where('ma_gv','=',Auth::user()->username)
           ->where('ma_thu','=',$thu)
           ->get();
@@ -90,15 +91,9 @@ class giangvienModel extends Model
           ->join('lop', 'chitietthoikhoabieu.ma_lop', '=', 'lop.ma_lop')
           ->join('phonghoc', 'chitietthoikhoabieu.ma_phong', '=', 'phonghoc.ma_phong')
           ->join('loaihoc','thoikhoabieu.ma_loai_hoc','=','loaihoc.ma_loai_hoc')
+          ->join('ngaytrongtuan','chitietthoikhoabieu.ma_thu','=','ngaytrongtuan.ma_thu')
           ->where('ma_gv','=',Auth::user()->username)
-          ->where('ma_thu','=',"T2")
-          ->orWhere('ma_thu','=',"T3")
-          ->orWhere('ma_thu','=',"T4")
-          ->orWhere('ma_thu','=',"T5")
-          ->orWhere('ma_thu','=',"T6")
-          ->orWhere('ma_thu','=',"T7")
-          ->orWhere('ma_thu','=',"CN")
           ->get();
           return $lichdaytuan;
-  } 
+  }
 }

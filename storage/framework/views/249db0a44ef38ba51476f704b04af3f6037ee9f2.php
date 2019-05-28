@@ -40,14 +40,16 @@
                                                     <th>Phòng học</th>
                                                     <th>Trạng thái</th>                                               
                                                 </tr>
+                                                <?php $__currentLoopData = $lichday; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <tr>
-                                                	<td>6h45-9h20</td>
-                                                    <td>Lý Thuyết</td>
-                                                    <td>CSDL</td>
-                                                    <td>LTMT2K8</td>
-                                                    <td>A17-405</td>
-                                                    <td><a href="Đăng nhập hệ thống - HACTECH.html">Vào lớp</a></td>
+                                                  <td><?php echo e($a->tietbatdau); ?> - <?php echo e($a->tietketthuc); ?></td>
+                                                    <td><?php echo e($a->ten_loaihoc); ?></td>
+                                                    <td><?php echo e($a->tenmonhoc); ?></td>
+                                                    <td><?php echo e($a->ma_lop); ?> - <?php echo e($a->ma_khoahoc); ?></td>
+                                                    <td><?php echo e($a->tenphong); ?> - <?php echo e($a->nhahoc); ?></td>
+                                                    <td><a href="#">Vào lớp</a></td>
                                                 </tr>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </thead>
                                         </table><!--//table-->
                                     </div>
@@ -62,6 +64,7 @@
                                     <div class="table-responsive">                      
                                         <table class="table table-boxed table-bordered table-striped text-center">
                                             <thead>
+                                                <?php $size=count($lichday); ?>
                                                  <tr>
                                                     <th>Thời gian</th>
                                                     <th>Loại</th>
@@ -70,14 +73,18 @@
                                                     <th>Phòng học</th>
                                                     <th>Trạng thái</th>                                               
                                                 </tr>
+
+                                                <?php $__currentLoopData = $lichday; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <tr>
-                                                	<td>6h45-9h20</td>
-                                                    <td>Lý Thuyết</td>
-                                                    <td>CSDL</td>
-                                                    <td>LTMT3K8</td>
-                                                    <td>A17-401</td>
-                                                    <td><a href="Đăng nhập hệ thống - HACTECH.html">Vào lớp</a></td>
+
+                                                  <td><?php echo e($a->tietbatdau); ?> - <?php echo e($a->tietketthuc); ?></td>
+                                                    <td><?php echo e($a->ten_loaihoc); ?></td>
+                                                    <td><?php echo e($a->tenmonhoc); ?></td>
+                                                    <td><?php echo e($a->ma_lop); ?> - <?php echo e($a->ma_khoahoc); ?></td>
+                                                    <td><?php echo e($a->tenphong); ?> - <?php echo e($a->nhahoc); ?></td>
+                                                    <td><a href="#">Vào lớp</a></td>
                                                 </tr>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </thead>
                                         </table><!--//table-->
                                     </div>
