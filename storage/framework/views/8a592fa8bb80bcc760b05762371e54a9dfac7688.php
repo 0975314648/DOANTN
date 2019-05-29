@@ -1,6 +1,4 @@
-@extends('layout_quantri.index')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <span style="font-weight:bold; font-size:14px;">DANH SÁCH GIÁO VIÊN</span>
                 <div class="header-table">
                     <div class="search">
@@ -31,42 +29,42 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($gvien as $gv)
+                    <?php $__currentLoopData = $gvien; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $gv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td>{{$dem++}}</td>
-                            <td>{{$gv->ma_gv}}</td>
-                            <td>{{$gv->hoten}}</td>
-                            <td>{{$gv->ngaysinh}}</td>
-                            <td>{{$gv->gioitinh}}</td>
-                            <td>{{$gv->sdt}}</td>
-                            <td>{{$gv->diachi}}</td>
-                            <td>{{$gv->email}}</td>
-                            <td>{{$gv->chucvu}}</td>
+                            <td><?php echo e($dem++); ?></td>
+                            <td><?php echo e($gv->ma_gv); ?></td>
+                            <td><?php echo e($gv->hoten); ?></td>
+                            <td><?php echo e($gv->ngaysinh); ?></td>
+                            <td><?php echo e($gv->gioitinh); ?></td>
+                            <td><?php echo e($gv->sdt); ?></td>
+                            <td><?php echo e($gv->diachi); ?></td>
+                            <td><?php echo e($gv->email); ?></td>
+                            <td><?php echo e($gv->chucvu); ?></td>
                             <td><span class="fas fa-edit"></span>
                                 <span class="fas fa-times"></span>
                             </td>
                         </tr>
-                    @endforeach    
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>    
                     </tbody>
                 </table>
                 <div class="number-page">
                     <ul class="pagination">
-                        @if($gvien->currentPage() != 1)
-                        <li><a href="{{$gvien->url($gvien->currentPage() - 1)}}">&laquo;</a></li>
-                        @endif
-                        @for($i = 1;$i <= $gvien->lastPage(); $i++)
-                        <li class="{{($gvien->currentPage() == $i) ? 'active' : ''}}">
-                            <a href="{{$gvien->url($i)}}">{{$i}}</a>
+                        <?php if($gvien->currentPage() != 1): ?>
+                        <li><a href="<?php echo e($gvien->url($gvien->currentPage() - 1)); ?>">&laquo;</a></li>
+                        <?php endif; ?>
+                        <?php for($i = 1;$i <= $gvien->lastPage(); $i++): ?>
+                        <li class="<?php echo e(($gvien->currentPage() == $i) ? 'active' : ''); ?>">
+                            <a href="<?php echo e($gvien->url($i)); ?>"><?php echo e($i); ?></a>
                         </li>
-                        @endfor
-                        @if($gvien->currentPage() != $gvien->lastPage())
-                        <li><a href="{{$gvien->url($gvien->currentPage() + 1)}}">&raquo;</a></li>
-                        @endif
+                        <?php endfor; ?>
+                        <?php if($gvien->currentPage() != $gvien->lastPage()): ?>
+                        <li><a href="<?php echo e($gvien->url($gvien->currentPage() + 1)); ?>">&raquo;</a></li>
+                        <?php endif; ?>
                     </ul>
                 </div>
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('popupDiv')
+<?php $__env->startSection('popupDiv'); ?>
 <!--create Modal -->
 <div class="modal fade" id="createModal" role="dialog">
     <div class="modal-dialog">
@@ -177,4 +175,5 @@
                 })
             })
         </script>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout_quantri.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\DOANTN\resources\views/quantri/giangvien.blade.php ENDPATH**/ ?>
