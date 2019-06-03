@@ -11,7 +11,7 @@
 		<div class="breadcrumbs pull-right">
 			<ul class="breadcrumbs-list">				
 				<li><a href="#">Trang chủ</a><i class="fas fa-angle-right"></i></li>
-                <li><a href="#">Sinh viên</a><i class="fas fa-angle-right"></i></li>
+                <li><a href="sinhvien">Sinh viên</a><i class="fas fa-angle-right"></i></li>
 				<li class="current" style="padding-left:5px">Dữ liệu điểm danh</li>
 			</ul>
 		</div><!--//breadcrumbs-->
@@ -32,16 +32,16 @@
                                                     <td style="padding:0px 20px 0px 30px"><label><strong>Xem các môn học khác</strong></label>
                                                         <select id ="cbmonhoc" name="cbmonhoc" class="form-control"  style="border-radius:3px">
                                                             
-                                                                @foreach($mon as $d)
-                                                                <option  value="{{$d->tenmonhoc}}">{{$d->tenmonhoc}}</option>
-                                                                @endforeach
+                                                                 
+                                                                <option  value=""></option>
+                                                                
                                                         </select>
                                                     </td>
                                                     <td style="padding:20px 20px 0px 0px">
-                                                        <select id = "cbloai" name="cbloai" class="form-control" style="border-radius:3px">
+                                                        <!-- <select id = "cbloai" name="cbloai" class="form-control" style="border-radius:3px">
                                                             <option value="LT">Lý thuyết</option>
                                                             <option value="TH">Thực hành</option>
-                                                        </select>
+                                                        </select> -->
                                                     </td>
                                                     <td style="padding-top:20px">
 														<button type="" class="btn btn-primary" style="border-radius:5px">Xem</button>
@@ -60,49 +60,32 @@
                                                     <th>STT</th>
                                                     <th>MSSV</th>
                                                     <th>Họ tên</th>
+                                                    <th>Giới tính</th>
                                                     <th>Ngày sinh</th>
-                                                    <th>Buổi 1</th>
-                                                    <th>Buổi 2</th>
-                                                    <th>Buổi 3</th>
-                                                    <th>Buổi 4</th>
-                                                    <th>Buổi 5</th>
-                                                    <th>Buổi 6</th>
-                                                    <th>Buổi 7</th>
-                                                    <th>Buổi 8</th>
-                                                    <th>Buổi 9</th>
-                                                    <th>Buổi 10</th>
-                                                    <th>Buổi 11</th>
-                                                    <th>Buổi 12</th>
-                                                    <th>Buổi 13</th>
-                                                    <th>Buổi 14</th>
-                                                    <th>Buổi 15</th>
+
+                                                <?php for($i=1;$i<=$sobuoi;$i++){ ?>
+                                                    <th>Buổi <?php echo $i; ?></th>
+                                                <?php } ?> 
+
                                                     <th>Thống kê</th>
                                                     <th>Điểm cộng</th>
                                                     <th>Ghi chú</th>
                                                 </tr>
-                                                @foreach($diemdanh as $dd)
+
+                                                @foreach($masv as $key=>$a)
                                                 <tr>
-                                                	<td>1</td>
-                                                    <td>{{$dd->ma_sv}}</td>
-                                                    <td>{{$dd->hoten}}</td>
-                                                    <td>{{$dd->ngaysinh}}</td>
-                                                    <td>{{$dd->diemdanh}}</td>
-                                                    <td>P</td>
-                                                    <td>P</td>
-                                                    <td>P</td>
-                                                    <td>P</td>
-                                                    <td>P</td>
-                                                    <td>P</td>
-                                                    <td>P</td>
-                                                    <td>P</td>
-                                                    <td>P</td>
-                                                    <td>P</td>
-                                                    <td>P</td>
-                                                    <td>P</td>
-                                                    <td>P</td>
-                                                    <td>P</td>
-                                                    <td>Tổng:15 <br>Vắng: 0<br>Muộn: 0</td>
-                                                    <td>8</td>
+                                                	<td>{{$key+1}}</td>
+                                                    <td>{{$a->ma_sv}}</td>
+                                                    <td>{{$a->hoten}}</td>
+                                                    <td>{{$a->gioitinh}}</td>
+                                                    <td>{{$a->ngaysinh}}</td>
+                                                
+                                                @for($i=1;$i<=$sobuoi;$i++)
+                                                    <td>{{$a->$i}}</td>
+                                                @endfor
+                                                
+                                                    <td>Tổng:{{$sobuoi}} <br>Vắng: 0<br>Muộn: 0</td>
+                                                    <td>(trống)</td>
                                                     <td>Đạt</td>
                                                 </tr>
                                                 @endforeach
@@ -125,7 +108,7 @@
 </div>
 </div><!--//content-->
 
-<script>
+<!-- <script>
     $(document).ready(function($){
         $('#cbmonhoc').change(function(){
             var rs = $('#cbmonhoc option:selected').data('mon').toString();
@@ -143,6 +126,6 @@
             
         });
     });
-</script>
+</script> -->
 
 @endsection

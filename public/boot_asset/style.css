@@ -268,20 +268,3 @@
 select#loaitk {
     width: 50%;
 }
-
-.modal-body table {
-    width: 90%;
-    margin-left: 20px;
-}
-
-.modal-body table tr{
-    height: 50px;
-}
-
-.modal-header{
-    background-color: #428CBA;
-}
-
-.fa-edit:before {
-    cursor: pointer;
-}

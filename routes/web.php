@@ -23,7 +23,6 @@ Route::group(['namespace'=>'Admin'],function(){
     Route::group(['prefix'=>'quantrihethong'],function(){
         Route::get('/','quantriHTController@getDefault');
         Route::get('user','quantriHTController@getQTUser');
-        Route::post('userPost','quantriHTController@postQTUser')->name('postUser');
         Route::get('sinhvien','quantriHTController@getSinhvien');
         Route::get('giangvien','quantriHTController@getGiangvien');
         Route::get('tkb','quantriHTController@getTKB');
@@ -37,23 +36,30 @@ Route::group(['namespace'=>'Admin'],function(){
     //return view('layout_quantri.index');
 //});
 
-Route::get('sinhviendefault', function () {
+Route::get('sinhvien', function () {
     return view('sinhvien.default');
 });
 
 
+
+Route::get('sinhvien/diem-danh','Sinhvien\SinhvienController@getDiemdanh');
+
+Route::get('sinhvien/thoi-khoa-bieu','Sinhvien\SinhvienController@thoikhoabieu');
+
+Route::get('sinhvien/lich-thi','Sinhvien\SinhvienController@lichthi');
+
 Route::group(['prefix'=>'giangvien'],function(){
+    //GET
     Route::get('/','Giangvien\defaultController@getIndex');
-    Route::get('thongke','Giangvien\defaultController@getThongke');
-    Route::get('thongke/chitiet','Giangvien\defaultController@getchitietThongke');
+    Route::get('tracuu','Giangvien\defaultController@getTracuu');
+    Route::get('tracuu/chitiet','Giangvien\defaultController@getChitietTracuu');
     Route::get('diemdanh','Giangvien\defaultController@getDiemdanh');
     Route::get('lichday','Giangvien\defaultController@getLichday');
 
+    //POST
+    
     Route::get('test','Giangvien\defaultController@getTest');
+
+    
 });
-Route::get('sinhvien/diemdanh','Sinhvien\SinhvienController@diemdanh');
-
-Route::get('sinhvien/tkb','Sinhvien\SinhvienController@thoikhoabieu');
-
-Route::get('sinhvien/lichthi','Sinhvien\SinhvienController@lichthi');
-
+Route::get('sinhvien/test','Sinhvien\SinhvienController@getTest');

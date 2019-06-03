@@ -14,18 +14,24 @@ class UserTableSeeder extends Seeder
         //
         $data=[
             [
+                'fullname'=>'admin',
                 'username'=>'admin',
                 'password'=>bcrypt('admin'),
+                'status'=>1,
                 'level'=>1
             ],
             [
-                'username'=>'GV001',
+                'fullname'=>'Giang Vien',
+                'username'=>'giangvien',
                 'password'=>bcrypt('123456'),
+                'status'=>1,
                 'level'=>2
             ],
             [
+                'fullname'=>'Sinh Vien',
                 'username'=>'sinhvien',
                 'password'=>bcrypt('123456'),
+                'status'=>1,
                 'level'=>3
             ]
         ];

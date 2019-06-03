@@ -43,7 +43,7 @@ class LoginController extends Controller
             }
             else
             {
-                return redirect('sinhviendefault');
+                return redirect('sinhvien');
             }
         }
         else

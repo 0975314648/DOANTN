@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 28, 2019 at 08:54 PM
+-- Generation Time: May 31, 2019 at 05:01 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `chitietbuoidiemdanh`;
 CREATE TABLE IF NOT EXISTS `chitietbuoidiemdanh` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ma_buoi_dd` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `ma_buoi_dd` int(11) NOT NULL,
   `ma_sv` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `diemdanh` float DEFAULT NULL,
   `diem_ythuc` float DEFAULT NULL,
@@ -40,16 +40,6 @@ CREATE TABLE IF NOT EXISTS `chitietbuoidiemdanh` (
   `ghichu` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `chitietbuoidiemdanh`
---
-
-INSERT INTO `chitietbuoidiemdanh` (`id`, `ma_buoi_dd`, `ma_sv`, `diemdanh`, `diem_ythuc`, `diem_kynang`, `diem_kienthuc`, `ghichu`) VALUES
-(1, 'DD001K1', 'SV001', 1, 8, 9, 8, ''),
-(2, 'DD001K2', 'SV001', 1, 5, 6, 7, ''),
-(3, 'DD001K1', 'SV002', 0, NULL, NULL, NULL, NULL),
-(4, 'DD001K2', 'SV002', 1, 2, 2, 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -64,19 +54,10 @@ CREATE TABLE IF NOT EXISTS `chitietdiemdanh` (
   `ma_lop` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `ma_gv` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `ma_mon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `ma_buoi_dd` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `ma_loai_hoc` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `ma_buoi_dd` int(11) NOT NULL,
   `ghichu` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `chitietdiemdanh`
---
-
-INSERT INTO `chitietdiemdanh` (`id`, `ma_diemdanh`, `ma_lop`, `ma_gv`, `ma_mon`, `ma_buoi_dd`, `ma_loai_hoc`, `ghichu`) VALUES
-(1, 'DD001', 'LTMT2', 'GV001', 'MON001', 'DD001K1', 'LT', ''),
-(2, 'ad', 'LTMT2', 'GV001', 'MON001', 'DD001K2', 'LT', '');
 
 -- --------------------------------------------------------
 
@@ -96,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `chitietthoikhoabieu` (
   `tietbatdau` int(11) NOT NULL,
   `tietketthuc` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `chitietthoikhoabieu`
@@ -107,7 +88,8 @@ INSERT INTO `chitietthoikhoabieu` (`id`, `ma_tkb`, `ma_mon`, `ma_gv`, `ma_lop`, 
 (2, 'TKB001', 'MON001', 'GV001', 'LTMT2', 'D403', 'T3', 4, 6),
 (3, 'TKB001', 'MON002', 'GV002', 'LTMT2', 'D403', 'T2', 4, 6),
 (5, 'TKB002', 'MON001', 'GV001', 'LTMT2', 'A15-203', 'T2', 7, 12),
-(1, 'TKB002', 'MON002', 'GV002', 'LTMT2', 'A17-405', 'T3', 7, 10);
+(1, 'TKB002', 'MON002', 'GV002', 'LTMT2', 'A17-405', 'T3', 7, 10),
+(6, 'TKB002', 'MON002', 'GV001', 'LTMT2', 'D403', 'T4', 7, 11);
 
 -- --------------------------------------------------------
 
@@ -120,18 +102,12 @@ CREATE TABLE IF NOT EXISTS `diemdanh` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ma_diemdanh` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `ma_khoa` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `ma_loai_hoc` varchar(255) NOT NULL,
   `kyhoc` int(11) NOT NULL,
   `ma_khoahoc` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `ghichu` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `diemdanh`
---
-
-INSERT INTO `diemdanh` (`id`, `ma_diemdanh`, `ma_khoa`, `kyhoc`, `ma_khoahoc`, `ghichu`) VALUES
-(1, 'DD001', 'CNTT', 1, 'K8', '');
 
 -- --------------------------------------------------------
 
@@ -590,7 +566,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `username`, `password`, `level`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'admin', '$2y$10$QbvNHN8yIwtLLj6jGpoOku9UNLSm9XafrtFopmhC063whTnXPssvq', 1, 'I5LdYgQ33npHX0RWQEmRHrO2ELVmDUvnIFSQRYQMhdmYz4uGLtdzjJF3RQeT', NULL, NULL),
 (2, 'GV001', '$2y$10$jX6REmicZCiUmfXSpNM68.E8Yspyu5.8ij1Aswd.m5EQvZS0WQbye', 2, '06LhvikmocMl7SnkKQwTofAI0cXSqySQ8zWq6DH8AqVejtkndrD71UmbD0m9', NULL, NULL),
-(3, 'LTMT2', '$2y$10$fIE90Ev4Z6f2YvZWyVtKnO8d9IiPdDeT7qv5qd6.cetMVyjIUF4vS', 3, 'TLDRon9CMecDKcM6J8k2MM1hxYUggbV9eLzCpyv9TagMWlkS7KUSA53TYVf0', NULL, NULL);
+(3, 'LTMT2', '$2y$10$fIE90Ev4Z6f2YvZWyVtKnO8d9IiPdDeT7qv5qd6.cetMVyjIUF4vS', 3, 'jt1Z3OoYLE2NPxVFTFxIZbAzEljePDQk3NbnIkHmHEm12h0zepPxrjPB2IzH', NULL, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

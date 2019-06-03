@@ -76,7 +76,7 @@
           <h4 class="modal-title" style="color:white">Thêm/Sửa người dùng</h4>
         </div>
         <div class="modal-body">
-            <form method="post" id="user-form">
+            <form method="post" id="addgv-form">
                 <span id="form_output"></span>
                 <table>
                     <tr>
@@ -143,23 +143,32 @@
                 $('#btn-Luu').click(function (e) {
                     e.preventDefault();
 
-                    var user = $('#username').val();
-                    var password = $('#password').val();
-                    var loaitk = $('#loaitk').val();
-                    alert(user+"-"+password+"-"+loaitk);
+                    var magv = $('#magv').val();
+                    var hoten = $('#hoten').val();
+                    var ngaysinh = $('#ngaysinh').val();
+                    var gt = $('#gt').val();
+                    var sdt = $('#sdt').val();
+                    var diachi = $('#diachi').val();
+                    var email = $('#email').val();
+                    var chucvu = $('#chucvu').val();
+                    alert(magv+"-"+hoten+"-"+ngaysinh+"-"+gt+"-"+sdt+"-"+diachi+"-"+email+"-"+chucvu);
                     //alert(name+"-"+price1+"-"+price2+"-"+star+"-"+image)
                     
-                    if(user != '' && password != ''){
+                    if(magv != '' && hoten != ''&& ngaysinh != ''&& gt != ''&& sdt != ''&& diachi != ''&& diachi != ''&& email != ''&& chucvu != ''){
                         $.ajax({
                             url:'quantrihethong/postuser',
                             method:"POST",
                             data:{
-                                user: user,
-                                password: password,
-                                loaitk: loaitk,
+                                magv: magv,
+                                hoten: hoten,
+                                ngaysinh: ngaysinh,
+                                gt: gt,
+                                sdt: sdt,
+                                diachi: diachi,
+                                email: email,
+                                chucvu: chucvu,
                             },
 
-                            
                             success:function(data) {
                                 //$('#myModal').modal('hide');
                                 //$('.list-product').append(data);

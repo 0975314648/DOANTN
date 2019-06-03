@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="google-site-verification" content="UGeWtdGxgXZgoQ4CAml_o4y0yLa6yMtL-AKiQ8GTeo0">
-
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" />
     <!-- FOR FACEBOOK -->
 
 	<link rel="shortcut icon" href="http://www.hactech.edu.vn/images/favicon.ico">

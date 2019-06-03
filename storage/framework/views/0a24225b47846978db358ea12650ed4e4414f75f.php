@@ -18,10 +18,10 @@
                                                                     <li class="nav-item">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#"> <i class="fas fa-book fa-fw fa-lg"></i> Sinh viên <i class="fas fa-angle-down"></i></a>
                     <ul class="dropdown-menu">                       
-                        <li><a href="sinhvien/lichthi"> <i class="fas fa-fw fa-calendar"></i> Lịch thi </a></li>
+                        <li><a href="sinhvien/lich-thi"> <i class="fas fa-fw fa-calendar"></i> Lịch thi </a></li>
                         <!--<li><a href="#"> <i class="fas fa-fw fa-list-alt"></i> Bảng điểm </a></li>-->
-                        <li><a href="sinhvien/tkb"> <i class="fas fa-fw fa-calendar"></i> Thời khóa biểu </a></li>
-                        <li><a href="sinhvien/diemdanh"> <i class="fas fa-fw fa-list-alt"></i> Dữ liệu điểm danh </a></li>
+                        <li><a href="sinhvien/thoi-khoa-bieu"> <i class="fas fa-fw fa-calendar"></i> Thời khóa biểu </a></li>
+                        <li><a href="sinhvien/diem-danh"> <i class="fas fa-fw fa-list-alt"></i> Dữ liệu điểm danh </a></li>
                     </ul>
                 </li>
                                             </ul><!--//nav-->

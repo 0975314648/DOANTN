@@ -34,8 +34,6 @@
     <link id="theme-style" rel="stylesheet" href="boot_asset/Đăng nhập hệ thống - HACTECH/styles.css">
     <link rel="stylesheet" href="boot_asset/style.css">
     <script src="boot_asset/script.js"></script>
-    <script src="boot_asset/jquery-3.4.1.min.js"></script>
-    
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>

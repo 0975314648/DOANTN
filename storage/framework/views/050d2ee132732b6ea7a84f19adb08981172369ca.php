@@ -8,7 +8,7 @@
 		<div class="breadcrumbs pull-right">
 			<ul class="breadcrumbs-list">				
 				<li><a href="#">Trang chủ</a><i class="fas fa-angle-right"></i></li>
-                <li><a href="#">Sinh viên</a><i class="fas fa-angle-right"></i></li>
+                <li><a href="sinhvien">Sinh viên</a><i class="fas fa-angle-right"></i></li>
 				<li class="current" style="padding-left:5px">Lịch thi</li>
 			</ul>
 		</div><!--//breadcrumbs-->
