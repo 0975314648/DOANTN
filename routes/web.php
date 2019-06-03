@@ -23,7 +23,7 @@ Route::group(['namespace'=>'Admin'],function(){
     Route::group(['prefix'=>'quantrihethong'],function(){
         Route::get('/','quantriHTController@getDefault');
         Route::get('user','quantriHTController@getQTUser');
-        Route::post('postuser','quantriHTController@postQTUser');
+        Route::post('userPost','quantriHTController@postQTUser')->name('postUser');
         Route::get('sinhvien','quantriHTController@getSinhvien');
         Route::get('giangvien','quantriHTController@getGiangvien');
         Route::get('tkb','quantriHTController@getTKB');
